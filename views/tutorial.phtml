@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<div align="center">
+			<div class="col s12">
+				<div class="card withe darken-1">
+					<div class="card-content white-text">
+						<div align="center"> <span class="card-title"><p style="color: #FFA500; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1em; "><?php echo $_SESSION['nome']; ?></p></span>
+							<?php if(isset($_GET['e'])){$e = $_GET['e']; if($e == 1){echo "<p style='color: #000;'>Você já respondeu ao Quiz hoje! Você só pode responder uma vez por dia.<br> <i class='material-icons' style='font-size: 360px; color: #FF0000;'>warning</i> </div> </div> <div class='card-action'> <div align='center'> <p style='color: #000;'>Volte amanhã! Clique em sair para voltar ao menu.</p><br> <a href='menu' class='waves-effect waves-light btn laranja'><i class='material-icons left'>arrow_back</i>Sair</a> </div> </div>"; } }else{echo "<p style='color: #000;'>Você está pronto para fazer o Quiz? Lembre-se você tem 3 minutos para responder cada questão. <br>Perguntas de matemática, história e geografia.</p><br> <img src='assets/img/outras/tutorial.jpg' width='683' height='318'> </div> </div> <div class='card-action'> <div align='center'> <p style='color: #000;'>Você está pronto? Clique em jogar ou clique em sair para voltar ao menu.</p><br> <a href='menu' class='waves-effect waves-light btn laranja'><i class='material-icons left'>arrow_back</i>Sair</a> <a href='verifica-teste' class='waves-effect waves-light btn laranja'><i class='material-icons right'>play_arrow</i>Jogar</a> </div> </div>"; } ?> </div>
+					</div>
+				</div>
+			</div>
+		</div>

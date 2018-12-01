@@ -1,0 +1,77 @@
+﻿<div class="section"></div>
+<div class="container">
+    <div class="row">
+        <div class="card-panel laranja" style="">
+            <span class="white-text">
+                <h5><a href="professor"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 1.5em; color: #fff"></i></a> Cadastrar ou editar um usuário</h5>
+            </span>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col s6">
+            <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+                <div class="row">
+                    <form class="col s12" action="cadastrar-usuario" method="post" autocomplete="off">
+                        <div class="row">
+                            <div class="input-field col s12"> <input id="nome" name="nome" type="text" class="validate" minlength="2" maxlength="32" style="color:#000" tabindex="1" required> <label for="nome">Nome<n style="color: #ec1c24"> *</n></label> </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12"> <input id="sobrenome" name="sobrenome" type="text" class="validate" minlength="2" maxlength="32" style="color:#000" tabindex="2" required> <label for="sobrenome">Sobrenome <n style="color: #ec1c24"> *</n></label> </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="nick" name="nick" type="text" class="validate" minlength="5" maxlength="15" style="color:#000" tabindex="3" required> <label for="nick">Nick <n style="color: #ec1c24"> *</n></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="senha" name="senha" type="password" class="validate" minlength="5" maxlength="25" style="color:#000" tabindex="4" required>
+                                <label for="senha">Senha <n style="color: #ec1c24"> *</n></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <n style="color: #9E9E9E">Qual tipo de usuário você está cadastrando?
+                                    <n style="color: #ec1c24"> *</n>
+                                </n>
+                                <select id="nivel" name="nivel" class="browser-default" style="color: #000; background-color: #f5f5f5" tabindex="5" required> 
+                                    <option value="" disabled selected style="color: #9E9E9E">Escolha uma opção</option> 
+                                    <option value="1" selected style="color: #000">Aluno </option> 
+                                    <option value="0" style="color: #000">Professor</option> 
+                                </select>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <?php 
+                            if(isset($_GET['e'])){$erro = $_GET['e']; 
+                            if($erro == 1){echo "<label> <b style='color: #ec1c24; font-family: 'Roboto', sans-serif; text-align:center;' data-error='wrong'>Este Nome não está disponível.</b> </label>"; }
+                            elseif($erro == 2){echo "<label> <b style='color: #ec1c24; font-family: 'Roboto', sans-serif; text-align:center;' data-error='wrong'>Este Nick não está disponível.</b> </label>"; } } ?>
+                        </div><br>
+                        <div align="center">
+                            <div class='row'> <button type='submit' value="Cadastrar" name='btn_login' class="col s12 btn btn-large waves-effect laranja" tabindex="6"> Cadastrar </button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+                <div class="row">
+                    <n style="color: #9E9E9E">Escolha o usuário para trocar a senha
+                        <n style="color: #ec1c24"> *</n>
+                    </n>
+                    <form class="col s12" action="alterar-senha" method="post" autocomplete="off">
+                        <div class="row">
+                            <div class="col s12"> <select id='id' name='id' class="browser-default" style="color: #000; background-color: #f5f5f5"> <option value="0" disabled selected style="color: #9E9E9E" tabindex="7">Escolha um usuário</option> <?php BuscarUsuarios::buscar(); ?> </select> </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12"> <input id="nova_senha" name="nova_senha" type="text" class="validate" minlength="5" maxlength="32" style="color:#000" tabindex="8" required> <label for="nova_senha">Nova senha<n style="color: #ec1c24"> *</n></label> </div> <label style='float: right;'> <p class='orange-text'><b>Máximo de caracteres 15</b></p> </label> </div>
+                        <div class="center">
+                            <?php if(isset($_GET['e'])){$erro = $_GET['e']; if($erro == 3){echo "<label> <b style='color: #ec1c24; font-family: 'Roboto', sans-serif; text-align:center;' data-error='wrong'>Escolha uma senha que não tenha sido usada anteriormente nesta conta.</b> </label>"; } } ?> </div><br>
+                        <div align="center">
+                            <div class='row'> <button type='submit' value="Cadastrar" name='btn_login' class="col s12 btn btn-large waves-effect laranja"> Atualizar senha </button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div align="center"> <a href="professor" class=" s12 btn-floating btn-large waves-effect waves-light laranja"><i class="material-icons">arrow_back</i></a><br><a style="color: #FFF">Voltar</a> </div><br> </div>
+    </div>
+</div>

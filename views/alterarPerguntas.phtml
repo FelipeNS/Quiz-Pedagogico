@@ -1,0 +1,48 @@
+<?php
+    if(!isset($_GET['id'])){
+        Controller::redirect('editar-perguntas');
+    }else{
+        $buscar = new BuscarPergunta();
+        $data = $buscar->buscarAlterar($_GET['id']);
+    }
+?>
+   <div align="center">
+    <div class="section"></div>
+    <div class="section"></div>
+    <h5 style="font-family: 'Roboto', sans-serif; color: #FFF">Alterar uma pergunta</h5><br>
+    <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+            <form class="col s12" name="formQuestões" action="mudar-pergunta" method="post" autocomplete="off">
+                <div class='row'>
+                    <div class='col s12'></div>
+                </div>
+                <div class="input-field col s6"> <input id="enunciado" name="enunciado" type="text" class="validate" style="color:#000" tabindex="1" required <?php echo "value='".$data[0]."'"?>><label for="text">Enunciado<n style="color: #ec1c24"> *</n></label> </div>
+                <div class="input-field col s6"> <input id="alt_correta" name="alt_correta" type="text" class="validate" style="color:#000" tabindex="2" required <?php echo "value='".$data[1]."'"?>> <label for="text">Alternativa correta<n style="color: #ec1c24"> *</n></label></div>
+                <div class="input-field col s4"> <input id="alt_incorreta_1" name="alt_incorreta_1" type="text" class="validate" style="color:#000" tabindex="3" required <?php echo "value='".$data[3]."'"?>> <label for="text">Alternativa incorreta 1<n style="color: #ec1c24"> *</n></label></div>
+                <div class="input-field col s4"> <input id="alt_incorreta_2" name="alt_incorreta_2" type="text" class="validate" style="color:#000" tabindex="4" required <?php echo "value='".$data[5]."'"?>> <label for="text">Alternativa incorreta 2<n style="color: #ec1c24"> *</n></label></div>
+                <div class="input-field col s4"> <input id="alt_incorreta_3" name="alt_incorreta_3" type="text" class="validate" style="color:#000" tabindex="5" required <?php echo "value='".$data[7]."'"?>> <label for="text">Alternativa incorreta 3<n style="color: #ec1c24"> *</n></label></div>
+                <input type="hidden" name="id_perg" value='<?php echo $_GET['id'];?>'>
+                <input type="hidden" name="alt_c" value='<?php echo $data[2];?>'>
+                <input type="hidden" name="alt_i1" value='<?php echo $data[4];?>'>
+                <input type="hidden" name="alt_i2" value='<?php echo $data[6];?>'>
+                <input type="hidden" name="alt_i3" value='<?php echo $data[8];?>'>
+                <div class="row">
+                    <div class="col s12">
+                        <n style="color: #9E9E9E">De qual matéria é essa pergunta?
+                            <n style="color: #ec1c24"> *</n>
+                        </n>
+                        <select id="materia" name="materia" class="browser-default" style="color: #000; background-color: #f5f5f5" tabindex="5" required> <option value="" disabled selected style="color: #9E9E9E">Escolha uma materia</option> 
+                            <?php BuscarMaterias::buscarAlterar($_GET['id']); ?> 
+                        </select>
+                    </div>
+                </div>
+                <div align="center">
+                    <div class='row'><button type='submit' name='btn_login' class="col s12 btn btn-large waves-effect laranja" tabindex="6">Alterar pergunta</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div align="center">
+    <div class="container"> <a href="editar-perguntas" class=" s12 btn-floating btn-large waves-effect waves-light laranja"><i class="material-icons">arrow_back</i></a><br><a style="color: #FFF">Voltar</a> </div>
+</div><br>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <base href="/<?php echo $baseUrl ?>" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icone -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icones/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icones/android-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icones/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/icones/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icones/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/icones/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/icones/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="assets/css/font.min.css" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link href="assets/css/materialize.min.css" rel="stylesheet" media="screen,projection">
+    <link href="assets/css/reset.min.css" rel="stylesheet" media="screen,projection">
+    <link href="assets/css/style.min.css" rel="stylesheet" media="screen,projection">
+    <link href="assets/css/emojis.css" rel="stylesheet" media="screen,projection">
+    <!-- Google Charts -->
+    <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+    <title>
+        <?=$title?>
+    </title>
+   
+</head>
+
+<body>
+    <section>
+        <?php $this->controller->renderView();?>
+    </section>
+    <!-- Importação dos scripts -->
+    <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="assets/js/materialize.min.js" type="text/javascript"></script>
+    <script src="assets/js/emojis.js" type="text/javascript"></script>
+</body>
+
+</html>

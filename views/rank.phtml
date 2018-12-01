@@ -1,0 +1,22 @@
+<div class="section"></div>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel laranja" style="">
+                <span class="white-text"><h5><a href="menu"><i class="fa fa-trophy" aria-hidden="true" style="font-size: 1.5em; color: #fff"></i></a> Rank </h5></span>
+            </div>
+        </div>
+    </div><br>
+    <?php
+        if($_SESSION['nivel'] == 1){
+            echo "<ul class='collection with-header'>";
+        }else{
+            echo "<ul class='collapsible' data-collapsible='accordion'>";
+            }
+    ?>
+        <?php ListarRank::listar(); ?>
+        </ul>
+        <div align="center"><br>
+            <a href="menu" class=" s12 btn-floating btn-large waves-effect waves-light laranja"><i class="material-icons">arrow_back</i></a><br> <a style="color: #FFF">Voltar</a>
+        </div><br>
+</div>

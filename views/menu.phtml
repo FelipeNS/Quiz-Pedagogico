@@ -1,0 +1,47 @@
+<?php 
+    if(isset($_SESSION['questao'])){
+        $_SESSION['questao'] = 1; 
+    } 
+    if(isset($_SESSION['pontuacao'])){
+        $_SESSION['pontuacao'] = 0; 
+    } 
+    // Setando valor da sessao em [p] para uso com emojis
+    for($i=0; $i < 10; $i++){
+        $p = "p".$i;
+        $_SESSION[$p] = 0;
+    }
+?>
+<div class="container">
+    <ul class="s6 offset-s6 listaId">
+        <li class="idUser"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <?php echo $_SESSION['nome'].' | ';?> </li>
+        <li class="data">
+            <?php echo date('d/m/Y', time());?> </li>
+    </ul>
+    <div align="center"><br><br>
+        <div class="section"></div><br><br>
+        <div class="row">
+            <div class="titulo">
+                <h2 style="font-family: 'Roboto', sans-serif; color: #fff">Quiz pedagogia</h2>
+            </div>
+            <ul class="botoes">
+                <li><a href="sair" class="icon icon-signout" title="Clique aqui para sair!"></a></li>
+                <li><a href="tutorial" class="icon icon-play-circle" title="Clique aqui para jogar!"></a></li>
+                <li><a href="rank" class="icon icon-trophy" title="Clique aqui para ver o Rank!"></a></li>
+            </ul>
+            <div class="row">
+                <ul class="textos"><br>
+                    <li>
+                        <n class="col s1">Sair</n>
+                    </li>
+                    <li>
+                        <n class="col s5">Jogar</n>
+                    </li>
+                    <li>
+                        <n class="col s6">Rank</n>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

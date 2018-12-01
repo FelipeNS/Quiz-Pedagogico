@@ -1,0 +1,45 @@
+﻿<?php 
+    $_SESSION['respondido'] = 1;
+?>
+<div class="contaierner">
+    <div align="center">
+        <div class="section">
+            <div class="section"></div><br><br>
+            <img src="assets/img/outras/trofeu.png" width="11%" height="auto"><br>
+            <div class="section"></div>
+            <!-- Emojis -->
+            <div align="center">
+                <div class="section"></div>
+                <div class="reacts">
+                 <?php
+                    for($i=0; $i < 10; $i++){
+                        $p = "p".$i;
+                        if($_SESSION[$p] == 0){
+                            echo "<div class='circle'><img src='assets/img/emojis/quiz.png' alt='' />
+					               <p>".($i+1)."</p>
+				                </div>";
+                        }elseif($_SESSION[$p] == 1){
+                            echo "<div class='circle'><img src='assets/img/emojis/like.png' alt='' />
+					               <p>Acertou</p>
+				            </div>";
+                        }else{
+                            echo "<div class='circle'><img src='assets/img/emojis/sad.png' alt='' />
+					               <p>Errou</p>
+				            </div>";
+                        }
+                    }    
+                ?>
+                </div>
+            </div>
+            <div class="section"></div>
+            <h1 style="color: #FFF; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 3em;">Parabéns você terminou o Quiz</h1><br><br>
+            <h1 style="color: #FFF; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 2.5em;">Você acertou
+                <?php echo $_SESSION['pontuacao'] . " perguntas";?> </h1><br>
+            <div class="section"></div>
+            <a href="menu" class="s6 waves-effect waves-light btn laranja"><i class="material-icons left">arrow_back</i>Menu</a><br>
+            <?php if($_SESSION['pontuacao'] >= 8){echo "<br><form action='http://toledocosta.com.br/sistemas/gamequiz/' method='post' autocomplete='off'>
+				<input type='hidden' name='id_user' value='".$_SESSION['id_user']."'>
+				<button type='submit' target='_blank' class='s6 waves-effect waves-light btn laranja'>Joguinho <i class='material-icons right'>videogame_asset</i></button>
+			</form>"; } ?>
+        </div>
+    </div>
